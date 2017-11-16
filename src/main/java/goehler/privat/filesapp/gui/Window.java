@@ -319,7 +319,7 @@ public class Window extends javax.swing.JFrame {
                 window = new Window();
                 window.setVisible(true);
                 try {
-                    startPath = new File("").getCanonicalFile();
+                    startPath = new File("D:\\").getCanonicalFile();
                 } catch(IOException ex) {
                     Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
                 }

@@ -154,12 +154,14 @@ public class FileService {
 
     private void scanFileExtensionFolders(File folder) {
         File[] fileList = folder.listFiles();
-        for(File file : fileList) {
-            if(file.isDirectory()) {
-                scanFileExtensionFolders(file);
-            } else {
-                if(!extensions.contains(FilenameUtils.getExtension(file.getName()))) {
-                    extensions.add(FilenameUtils.getExtension(file.getName()));
+        if(fileList != null) {
+            for(File file : fileList) {
+                if(file.isDirectory()) {
+                    scanFileExtensionFolders(file);
+                } else {
+                    if(!extensions.contains(FilenameUtils.getExtension(file.getName()))) {
+                        extensions.add(FilenameUtils.getExtension(file.getName()));
+                    }
                 }
             }
         }
